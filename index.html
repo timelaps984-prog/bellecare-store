@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="BelleCare — parfums féminins et soins du corps et des pieds. Commandez facilement au Maroc.">
+  <meta name="theme-color" content="#f7dce6">
+  <title>BelleCare | Beauty starts with you</title>
+  <style>
+    :root{--pink:#e9a7bd;--deep:#a94f73;--pale:#fff6f9;--ink:#49333d;--muted:#866b77;--white:#fff;--line:#f0dce4}
+    *{box-sizing:border-box} html{scroll-behavior:smooth}
+    body{margin:0;background:#fffafc;color:var(--ink);font-family:Arial,Helvetica,sans-serif;line-height:1.55}
+    a{color:inherit;text-decoration:none} button,input,select,textarea{font:inherit}
+    .top{background:var(--deep);color:white;text-align:center;padding:8px 12px;font-size:13px;letter-spacing:.3px}
+    header{background:#fff;position:sticky;top:0;z-index:5;border-bottom:1px solid var(--line)}
+    .nav{max-width:1160px;margin:auto;padding:15px 22px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .brand{font-family:Georgia,serif;font-size:29px;font-weight:bold;color:var(--deep);letter-spacing:1px}
+    .brand small{display:block;font:10px Arial,sans-serif;letter-spacing:3px;color:var(--muted);text-align:center}
+    nav{display:flex;gap:23px;font-size:14px;color:#674b58}
+    nav a:hover{color:var(--deep)}
+    .pill{background:var(--deep);color:#fff;padding:11px 18px;border-radius:25px;font-size:13px;font-weight:bold}
+    .hero{max-width:1160px;margin:30px auto 55px;padding:0 22px}
+    .hero-inner{background:linear-gradient(115deg,#fae5ed,#fff5f8 60%,#f4d5e1);border-radius:28px;min-height:390px;display:grid;grid-template-columns:1.05fr .95fr;overflow:hidden;align-items:center}
+    .hero-copy{padding:55px 7%}
+    .eyebrow{color:var(--deep);font-size:12px;font-weight:bold;letter-spacing:3px;text-transform:uppercase}
+    h1{font-family:Georgia,serif;font-size:clamp(38px,5vw,62px);line-height:1.08;margin:15px 0;color:#6e3e54;font-weight:normal}
+    .hero-copy p{max-width:470px;color:#795e6b;margin-bottom:27px}
+    .actions{display:flex;gap:12px;flex-wrap:wrap}
+    .btn{display:inline-block;border:0;border-radius:28px;padding:13px 22px;background:var(--deep);color:white;font-weight:bold;cursor:pointer}
+    .btn.secondary{background:white;color:var(--deep);border:1px solid #e5b8c9}
+    .hero-art{height:100%;min-height:330px;display:flex;align-items:center;justify-content:center;padding:30px}
+    .art-card{width:min(330px,90%);height:290px;border-radius:48% 48% 24px 24px;background:linear-gradient(145deg,#f5cbd9,#fff1f5);display:flex;align-items:center;justify-content:center;position:relative;box-shadow:0 20px 50px #b56c8522}
+    .bottle{width:115px;height:170px;border-radius:23px 23px 30px 30px;background:linear-gradient(90deg,#d58ca7,#fff0f5 48%,#cf829f);box-shadow:inset -12px 0 20px #9b4f6a22,0 18px 25px #8d4d6425;position:relative}
+    .bottle:before{content:"";position:absolute;width:43px;height:35px;background:#c08a9e;top:-31px;left:36px;border-radius:7px 7px 2px 2px}
+    .bottle:after{content:"BelleCare";position:absolute;left:0;right:0;top:72px;text-align:center;font:16px Georgia,serif;color:#78445a}
+    .flower{position:absolute;font-size:52px;opacity:.8}.f1{top:22px;left:35px}.f2{bottom:22px;right:26px;font-size:42px}
+    section{max-width:1160px;margin:0 auto 65px;padding:0 22px}
+    .section-head{text-align:center;margin-bottom:27px}
+    .section-head .eyebrow{letter-spacing:2px}
+    h2{font:normal 36px Georgia,serif;color:#704459;margin:7px 0}
+    .section-head p{color:var(--muted);margin:0}
+    .categories{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}
+    .cat{background:var(--pale);border:1px solid var(--line);border-radius:18px;padding:25px;text-align:center}
+    .cat .emoji{font-size:34px}.cat h3{font:normal 21px Georgia,serif;margin:8px 0 3px;color:#75475c}.cat p{font-size:13px;color:var(--muted);margin:0}
+    .products{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    .product{border:1px solid var(--line);border-radius:19px;overflow:hidden;background:white;box-shadow:0 7px 25px #a34e6c0b}
+    .product-art{height:205px;display:flex;align-items:center;justify-content:center;background:linear-gradient(145deg,#fff0f5,#f8dce7);font-size:75px}
+    .product:nth-child(2) .product-art{background:linear-gradient(145deg,#f8e9e1,#fff7f2)}
+    .product:nth-child(3) .product-art{background:linear-gradient(145deg,#f7e7ef,#fbeff4)}
+    .product-info{padding:17px}.product-info h3{font:normal 20px Georgia,serif;margin:0 0 6px;color:#704459}
+    .product-info p{font-size:13px;color:var(--muted);min-height:40px;margin:0 0 13px}
+    .price{font-weight:bold;color:var(--deep);font-size:18px}.price em{font-style:normal;font-size:11px;color:var(--muted);font-weight:normal}
+    .product-info .btn{width:100%;text-align:center;margin-top:12px}
+    .notice{background:#fff0f5;border:1px solid var(--line);padding:16px 19px;border-radius:15px;color:#785767;font-size:13px;margin-top:20px}
+    .order-wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:25px;align-items:start}
+    .order-note{background:#f9e6ee;padding:27px;border-radius:20px}
+    .order-note h3{font:normal 26px Georgia,serif;margin:0 0 10px;color:#704459}
+    form{background:white;border:1px solid var(--line);border-radius:20px;padding:25px;box-shadow:0 8px 25px #a34e6c0a}
+    label{display:block;font-size:13px;font-weight:bold;margin:0 0 6px;color:#68495a}
+    input,select,textarea{width:100%;padding:12px 13px;border:1px solid #ead5de;border-radius:10px;background:#fffafd;color:var(--ink);margin-bottom:15px;outline-color:var(--pink)}
+    textarea{min-height:85px;resize:vertical}
+    .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    form .btn{width:100%}
+    .contact{background:#fff4f8;border-radius:22px;padding:30px;text-align:center}
+    .contact p{color:var(--muted)}
+    footer{background:#704459;color:#fff;padding:28px 20px;text-align:center;font-size:13px}
+    footer a{text-decoration:underline}
+    .wa-float{position:fixed;right:18px;bottom:18px;background:#20b866;color:white;border-radius:30px;padding:13px 18px;font-weight:bold;box-shadow:0 8px 22px #0002;z-index:6}
+    @media(max-width:760px){nav{display:none}.hero-inner{grid-template-columns:1fr}.hero-copy{padding:38px 27px 15px}.hero-art{min-height:260px}.categories,.products{grid-template-columns:1fr 1fr}.order-wrap{grid-template-columns:1fr}.product-art{height:165px}}
+    @media(max-width:480px){.categories,.products{grid-template-columns:1fr}.nav{padding:12px 16px}.brand{font-size:25px}.hero{margin-top:16px}.hero-inner{border-radius:20px}.form-grid{grid-template-columns:1fr}h2{font-size:31px}}
+  </style>
+</head>
+<body>
+  <div class="top">✨ Livraison partout au Maroc — Contactez-nous pour confirmer les frais</div>
+  <header>
+    <div class="nav">
+      <a class="brand" href="#home">BelleCare<small>BEAUTY • CARE • CONFIDENCE</small></a>
+      <nav><a href="#home">Accueil</a><a href="#categories">Catégories</a><a href="#products">Produits</a><a href="#order">Commander</a><a href="#contact">Contact</a></nav>
+      <a class="pill" href="#products">Découvrir</a>
+    </div>
+  </header>
+
+  <main>
+    <div class="hero" id="home">
+      <div class="hero-inner">
+        <div class="hero-copy">
+          <div class="eyebrow">Bienvenue chez BelleCare</div>
+          <h1>La beauté commence par prendre soin de soi.</h1>
+          <p>Découvrez notre sélection de parfums féminins et de soins pour le corps et les pieds. Choisissez vos favoris et commandez facilement.</p>
+          <div class="actions"><a class="btn" href="#products">Voir les produits</a><a class="btn secondary" href="#order">Passer commande</a></div>
+        </div>
+        <div class="hero-art"><div class="art-card"><span class="flower f1">✿</span><div class="bottle"></div><span class="flower f2">✧</span></div></div>
+      </div>
+    </div>
+
+    <section id="categories">
+      <div class="section-head"><div class="eyebrow">Nos univers</div><h2>Choisissez votre rituel</h2><p>Des essentiels beauté pour prendre soin de vous.</p></div>
+      <div class="categories">
+        <div class="cat"><div class="emoji">🌸</div><h3>Parfums</h3><p>Des fragrances féminines</p></div>
+        <div class="cat"><div class="emoji">🧴</div><h3>Soins du corps</h3><p>Hydratation et douceur</p></div>
+        <div class="cat"><div class="emoji">🦶</div><h3>Soins des pieds</h3><p>Confort et soin des talons</p></div>
+      </div>
+    </section>
+
+    <section id="products">
+      <div class="section-head"><div class="eyebrow">La sélection BelleCare</div><h2>Nos produits</h2><p>Les fiches ci-dessous sont des exemples à remplacer par vos vrais produits.</p></div>
+      <div class="products">
+        <article class="product">
+          <div class="product-art">🌷</div>
+          <div class="product-info"><h3>Parfum féminin</h3><p>Ajoutez ici le nom, le volume et la description exacte de votre parfum.</p><div class="price">Prix à définir <em>— MAD</em></div><button class="btn" onclick="quickOrder('Parfum féminin')">Commander</button></div>
+        </article>
+        <article class="product">
+          <div class="product-art">🧴</div>
+          <div class="product-info"><h3>Crème pour les pieds</h3><p>Ajoutez ici les informations du fabricant et le format du produit.</p><div class="price">Prix à définir <em>— MAD</em></div><button class="btn" onclick="quickOrder('Crème pour les pieds')">Commander</button></div>
+        </article>
+        <article class="product">
+          <div class="product-art">🌺</div>
+          <div class="product-info"><h3>Soin du corps</h3><p>Ajoutez ici le type de soin, la quantité et les détails utiles.</p><div class="price">Prix à définir <em>— MAD</em></div><button class="btn" onclick="quickOrder('Soin du corps')">Commander</button></div>
+        </article>
+      </div>
+      <div class="notice">Les noms, descriptions et prix sont des exemples. Remplacez-les par les informations réelles de vos produits avant de publier. Vérifiez également les stocks et les frais de livraison avec le client.</div>
+    </section>
+
+    <section id="order">
+      <div class="section-head"><div class="eyebrow">Commande facile</div><h2>Votre commande en quelques clics</h2><p>Remplissez le formulaire : votre demande sera préparée dans WhatsApp pour confirmation.</p></div>
+      <div class="order-wrap">
+        <div class="order-note"><h3>Une question ?</h3><p>Nous sommes disponibles pour vous aider à choisir votre produit et confirmer votre commande.</p><p><strong>WhatsApp :</strong><br>+212 785 866 064</p><p><strong>Email :</strong><br>yassiryassin592@gmail.com</p><a class="btn" href="https://wa.me/212785866064?text=Bonjour%20BelleCare%2C%20je%20souhaite%20avoir%20des%20informations." target="_blank" rel="noopener">Discuter sur WhatsApp</a></div>
+        <form id="orderForm">
+          <div class="form-grid">
+            <div><label for="customer">Nom complet *</label><input id="customer" required placeholder="Votre nom"></div>
+            <div><label for="phone">Téléphone *</label><input id="phone" required type="tel" placeholder="06XXXXXXXX"></div>
+          </div>
+          <label for="city">Ville *</label><input id="city" required placeholder="Votre ville">
+          <label for="address">Adresse de livraison *</label><textarea id="address" required placeholder="Quartier, rue, numéro..."></textarea>
+          <label for="product">Produit souhaité *</label>
+          <select id="product" required><option value="">Choisissez un produit</option><option>Parfum féminin</option><option>Crème pour les pieds</option><option>Soin du corps</option><option>Autre produit (préciser dans les notes)</option></select>
+          <div class="form-grid">
+            <div><label for="qty">Quantité</label><input id="qty" type="number" min="1" value="1"></div>
+            <div><label for="contacttime">Moment de contact</label><select id="contacttime"><option>À tout moment</option><option>Matin</option><option>Après-midi</option><option>Soir</option></select></div>
+          </div>
+          <label for="notes">Notes (facultatif)</label><textarea id="notes" placeholder="Couleur, format ou question..."></textarea>
+          <button class="btn" type="submit">Envoyer ma demande sur WhatsApp</button>
+          <p style="font-size:11px;color:#927987;margin:10px 0 0">En envoyant, WhatsApp s'ouvrira avec les informations de votre demande. La commande n'est confirmée qu'après échange avec BelleCare.</p>
+        </form>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="contact"><div class="eyebrow">Restons en contact</div><h2>Besoin d'un conseil ?</h2><p>Écrivez-nous, nous serons ravis de vous répondre.</p><div class="actions" style="justify-content:center"><a class="btn" href="https://wa.me/212785866064" target="_blank" rel="noopener">WhatsApp</a><a class="btn secondary" href="mailto:yassiryassin592@gmail.com">Envoyer un email</a></div></div>
+    </section>
+  </main>
+  <footer>© <span id="year"></span> BelleCare — Beauty • Care • Confidence<br><a href="mailto:yassiryassin592@gmail.com">yassiryassin592@gmail.com</a> · Maroc</footer>
+  <a class="wa-float" href="https://wa.me/212785866064?text=Bonjour%20BelleCare" target="_blank" rel="noopener">WhatsApp</a>
+
+  <script>
+    const WA_NUMBER = "212785866064";
+    function quickOrder(product){
+      document.getElementById('product').value = product;
+      document.getElementById('order').scrollIntoView({behavior:'smooth'});
+    }
+    document.getElementById('orderForm').addEventListener('submit', function(e){
+      e.preventDefault();
+      const v = id => document.getElementById(id).value.trim();
+      const message = [
+        "Bonjour BelleCare, je souhaite passer une commande :",
+        "Nom : " + v('customer'),
+        "Téléphone : " + v('phone'),
+        "Ville : " + v('city'),
+        "Adresse : " + v('address'),
+        "Produit : " + v('product'),
+        "Quantité : " + (v('qty') || "1"),
+        "Contact : " + v('contacttime'),
+        "Notes : " + (v('notes') || "Aucune"),
+        "Merci de confirmer le prix total et la livraison."
+      ].join("\n");
+      window.open("https://wa.me/" + WA_NUMBER + "?text=" + encodeURIComponent(message), "_blank");
+    });
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
